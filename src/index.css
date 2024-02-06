@@ -6,5 +6,9 @@
 
 body {
   background-color: #000000;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+*, html, body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
 }

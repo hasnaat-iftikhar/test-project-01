@@ -1,16 +1,9 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Movie from "./Movie";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const Row = ({ title, fetchURL, rowID }) => {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    axios.get(fetchURL).then((response) => {
-      setMovies(response.data.results);
-    });
-  }, [fetchURL]);
+const Row = ({ title, data, rowID }) => {
+  const [listItems, setListItems] = useState([...data]);
 
   const slideLeft = () => {
     var slider = document.getElementById("slider" + rowID);
@@ -22,9 +15,9 @@ const Row = ({ title, fetchURL, rowID }) => {
   };
 
   return (
-    <>
-      <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
-      <div className="relative flex items-center group">
+    <div className="pt-[42px]">
+      <h2 className="text-white font-bold md:text-xl px-[42px]">{title}</h2>
+      <div className="mt-[42px] relative flex items-center group">
         <MdChevronLeft
           onClick={slideLeft}
           className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
@@ -48,7 +41,7 @@ const Row = ({ title, fetchURL, rowID }) => {
           size={40}
         />
       </div>
-    </>
+    </div>
   );
 };
 
