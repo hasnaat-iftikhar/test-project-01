@@ -3,7 +3,7 @@ import Container from "./Container"
 
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
-const Row = ({ title, data, rowID }) => {
+const Row = ({ title, data, rowID, className="" }) => {
   const slideLeft = () => {
     var slider = document.getElementById("slider" + rowID);
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -36,7 +36,7 @@ const Row = ({ title, data, rowID }) => {
   ));
 
   return (
-    <div className="pt-[42px]">
+    <div className={className}>
       <Container>
         <h2 className="text-white font-bold md:text-3xl">{title}</h2>
       </Container>

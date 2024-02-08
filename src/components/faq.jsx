@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import Container from "./Container";
 
-function FaqSimple() {
+function Faq({
+  className=""
+}) {
   const [accordionStates, setAccordionStates] = useState(
     new Array(5).fill(false)
   );
@@ -12,7 +15,6 @@ function FaqSimple() {
     setAccordionStates(newAccordionStates);
   };
 
-  // Dummy text for the accordion questions and answers
   const faqs = [
     {
       question: "How do I get started with this app?",
@@ -42,22 +44,30 @@ function FaqSimple() {
   ];
 
   return (
-    <div className="container sm p-4 text-white">
-      <h1 className="text-center mb-8">Frequently Asked Questions</h1>
-      {faqs.map((faq, index) => (
-        <div className="rounded-md mb-6 border border-gray-300" key={index}>
-          <div
-            className="flex justify-between p-4 cursor-pointer"
-            onClick={() => toggleAccordion(index)}
-          >
-            <div>{faq.question}</div>
-            <div>{accordionStates[index] ? "-" : "+"}</div>
-          </div>
-          {accordionStates[index] && <div className="p-4">{faq.answer}</div>}
+    <div className={`${className}`}>
+      <Container className="flex justify-between items-start">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-white font-bold md:text-3xl">Frequently Asked Questions</h1>
+          <p className="text-[16px] opacity-90 max-w-[480px] text-white leading-[140%]">Answers to all your BIG questions about KCD Sri Lanka 2023. Still have a question? Feel free to reach out to us!</p>
         </div>
-      ))}
+        
+        <div className="flex flex-col gap-[24px] w-full max-w-[600px]">
+          {faqs.map((faq, index) => (
+            <div className="rounded-[16px] p-[24px] bg-[#222222]" key={index}>
+              <div
+                className="flex justify-between cursor-pointer"
+                onClick={() => toggleAccordion(index)}
+              >
+                <p className="text-white text-[16px] font-semibold">{faq.question}</p>
+                <div className="text-white font-semibold text-[20px]">{accordionStates[index] ? "-" : "+"}</div>
+              </div>
+              {accordionStates[index] && <div className="mt-[20px]"><p className="text-[16px] text-white opacity-90 leading-[140%]">{faq.answer}</p></div>}
+            </div>
+          ))}
+        </div>
+      </Container>
     </div>
   );
 }
 
-export default FaqSimple;
+export default Faq;
