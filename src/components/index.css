@@ -1,0 +1,24 @@
+.page8 {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.page8 div {
+  padding: 1.5vw;
+  display: inline-block;
+  animation-name: scroller;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes scroller {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

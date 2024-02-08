@@ -7,13 +7,20 @@ import Faq from "../components/faq";
 
 // Mocks
 import speakers from "../mocks/speakers";
+import Sponsor from "../components/Sponsor";
 
 const Home = () => {
   return (
     <>
       <Main />
-      <Row rowID="1" title="Our Speakers" data={speakers} className="mt-[120px]" />
-      <Faq className='mt-[120px]' />
+      <Row
+        rowID="1"
+        title="Our Speakers"
+        data={speakers}
+        className="mt-[120px]"
+      />
+      <Sponsor />
+      <Faq className="mt-[120px]" />
     </>
   );
 };
