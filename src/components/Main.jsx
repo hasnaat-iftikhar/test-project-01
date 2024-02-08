@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import requests from "../Requests";
+import Container from "./Container";
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
@@ -26,38 +27,38 @@ const Main = () => {
 
   return (
     <div className="relative w-full h-[700px] text-white">
-      <div className="w-full h-full">
+      <div className="w-full h-full flex items-center">
         <div
-          className="absolute w-full h-[700px] bg-gradient-to-r from-[#221d1d]"
+          className="absolute w-full h-[700px] bg-gradient-to-r from-[#000]"
           style={{
             filter: "drop-shadow(2px 4px 6px black)",
           }}
         ></div>
         <img
-          className="w-full h-full object-cover"
+          className="absolute z-[-1] w-full h-full object-cover"
           src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg"
           alt={movie?.title}
         />
-        <div className="absolute w-full top-[60%] transform translate-y-[-50%] px-[42px] md:p-8">
+        <Container className="mt-[96px] relative z-[1]">
           <h1 className="text-3xl md:text-5xl font-bold">
             {title} Community
             <br />
             Days Lahore
-          </h1>
+          </h1> 
           <p className="text-gray-400 text-sm max-w-[500px] mt-[12px]">
             Experience the power of community at the Kubernetes Community Days
             in Lahore! When a diverse group of experts comes together to learn,
             network, and share knowledge on all things cloud native
           </p>
           <div className="mt-[24px]">
-            <button className="bg-[#00cc88] text-white py-3 px-5 rounded-[6px]">
+            <button className="bg-primary text-white py-3 px-5 rounded-[6px]">
               Get Your Tickets
             </button>
             <button className="border text-white border-[#3a3838] bg-[#3a3838] py-3 px-5 ml-4 rounded-[6px]">
               Learn More
             </button>
           </div>
-        </div>
+        </Container>
       </div>
     </div>
   );

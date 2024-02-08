@@ -1,37 +1,24 @@
-// import { Route } from "react-router-dom";
-// import Navbar from "./components/Navbar";
-// // import { AuthContextProvider } from "./context/AuthContext";
-// import Home from "./pages/Home";
-// // import Login from "./pages/Login";
-// // import Signup from "./pages/Signup";
-// // import Account from "./pages/Account";
-// // import ProtectedRoute from "./components/ProtectedRoute";
-
-// function App() {
-//   return (
-//     <>
-//       <Navbar />
-//       <Route path="/" element={<Home />} />
-//     </>
-//   );
-// }
-
-// export default App;
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import { AuthContextProvider } from "./context/AuthContext";
+
+// Page
 import Home from "./pages/Home";
+
+// Components
+import Navbar from "./components/Navbar";
+
+// Temp
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <>
+    <main className="max-w-[1920px] mx-auto relative">
       <AuthContextProvider>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
       </AuthContextProvider>
-    </>
+    </main>
   );
 }
 
