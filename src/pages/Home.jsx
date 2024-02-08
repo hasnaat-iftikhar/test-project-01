@@ -12,6 +12,7 @@ const Home = () => {
     <>
       <Main />
       <Row rowID="1" title="Our Speakers" data={speakers} />
+      <FaqSimple />
     </>
   );
 };

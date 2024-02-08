@@ -13,7 +13,6 @@ const Row = ({ title, data, rowID }) => {
     var slider = document.getElementById("slider" + rowID);
     slider.scrollLeft = slider.scrollLeft + 500;
   };
-  
 
   const divArray = data.map((item, index) => (
     <div
